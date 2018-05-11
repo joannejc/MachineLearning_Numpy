@@ -15,7 +15,7 @@ def main():
     y = np.asarray(x[:,0]*x[:,1] * np.power(x[:,2],3) + x[:,3]/x[:,4] - x[:,4])
 
     mlp = MLP(5, 1, 30, 2, activation_type= 'tanh')
-    sgd(x, y, mlp, mse, regularization='l2', l = 0.2, shuffle = True, lr = 8e-3, print_every = 200, epochs= 5000)
+    sgd(x, y, mlp, mse, regularization='l2', l = 0.2, lr_type = 'decay', shuffle = True, lr = 8e-3, grad_clip=1.5, print_every = 200, epochs= 3000)
     
     #print(vars(mlp))
 
