@@ -1,3 +1,5 @@
+import numpy as np
+
 class Tanh(object):
     '''Tanh activation function (output values are between -1 and 1)
     '''

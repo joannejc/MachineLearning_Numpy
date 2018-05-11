@@ -2,13 +2,16 @@ import numpy as np
 from src.loss_fns.mse import mse
 from src.models.mlp import MLP
 
-def batch_gd(x_train, y_train, mlp, loss, grad_clip=1.5, lr = 1e-4, epochs = 3000, print_every=100):
+def batch_gd(x_train, y_train, mlp, loss, regularization='l2', l = 0.2, grad_clip=1.5, lr = 1e-4, epochs = 3000, print_every=100):
     ''' batch gradient descent
+        Args:
+        regularization: None, 'l2'
+        l: regularization parameter (lambda)
     '''
     
     for i in range(epochs):
-        y_pred = mlp.predict(x_train)
-        mse, dLoss = loss(y_pred, y_train)
+        y_pred, w = mlp.predict(x_train)
+        mse, dLoss = loss(y_pred, y_train, w, regularization=regularization, l=l)
         mlp.backprop(dLoss)
         
         # update:

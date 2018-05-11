@@ -1,1 +1,3 @@
-[]
+[
+  "sgd_test.py::TestSgd::testSigmoid"
+]
