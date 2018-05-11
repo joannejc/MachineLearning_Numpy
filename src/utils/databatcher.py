@@ -8,7 +8,7 @@ def data_batcher(x, y, batch_size, shuffle = False):
 
     # reshape checks:
     x = x.reshape(data_len, -1)
-    y = y.reshpae(data_len, -1)
+    y = y.reshape(data_len, -1)
     # check shapes of x and y:
     assert x.shape[0] == y.shape[0], 'x and y shapes are not the same.'
 
