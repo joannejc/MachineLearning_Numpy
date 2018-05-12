@@ -3,8 +3,7 @@ from src.activation_fns.tanh import Tanh
 
 def getActivation(fnName):
     '''
-        Arg: fnName is the activation function name
-        e.g. sigmoid, tanh
+        Arg: fnName is the activation function name (e.g. 'sigmoid', 'tanh')
     '''
     if fnName == 'sigmoid':
         return Sigmoid

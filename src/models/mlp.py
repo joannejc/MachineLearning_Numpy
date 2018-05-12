@@ -3,9 +3,12 @@ from src.layers .linearlayer import LinearLayer
 from src.utils.getActivation import getActivation
 
 class MLP(object):
-    '''
-    '''
+
     def __init__(self, input_dim, output_dim, hidden_dim, hidden_layers = 1, activation_type = 'sigmoid'):
+        '''
+            Args:
+            - activation_type: 'sigmoid', 'tanh'
+        '''
         
         # note: do not instantiate activation fn here, if we do this, then all activation fns in all 
         # layers will refer to the same instance.
